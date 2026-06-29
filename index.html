@@ -291,6 +291,22 @@ h2{font-family:var(--disp);font-weight:600;line-height:1.02;font-size:clamp(2.1r
 @media (max-width:820px){.fp{max-width:118px;font-size:.72rem;padding:7px 9px}}
 @media (prefers-reduced-motion:reduce){.fly .ring{animation:none}.fp{animation:none!important;opacity:1!important}}
 
+
+/* branded rendering beat */
+.brandrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.bcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);box-shadow:0 1px 2px rgba(10,13,20,.05)}
+.bcard .bh{height:7px}
+.bcard .bin{padding:14px 15px 16px}
+.bcard .blogo{font-family:var(--disp);font-weight:600;font-size:.9rem;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.bcard .bdot{width:14px;height:14px;border-radius:5px;display:inline-block}
+.bcard .bk{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.bcard .bv{font-size:.82rem;color:var(--ink);margin-top:2px}
+.bcard .bbtn{margin-top:13px;font-size:.74rem;font-weight:600;border-radius:7px;padding:8px 11px;text-align:center;color:#fff}
+.bcard.byou{border-style:dashed}
+.bcard.byou .bbtn{background:var(--panel2);color:var(--mut);border:1px solid var(--line)}
+.brandtag{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-align:center;padding:8px 0 0}
+@media (max-width:820px){.brandrow{grid-template-columns:1fr}}
+
 #hud{position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;justify-content:space-between;align-items:center;padding:15px 22px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 #hud .ctrl{display:flex;align-items:center;gap:14px}
 .navbtn{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.8);backdrop-filter:blur(10px);color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
@@ -391,7 +407,7 @@ h2{font-family:var(--disp);font-weight:600;line-height:1.02;font-size:clamp(2.1r
 
   <!-- 3 composer (interactive palette + matrix) -->
   <section class="room" data-tone="surface"><div class="inner">
-    <div class="halflbl b d1">Half two · admin — what they see, how the AI acts</div>
+    <div class="halflbl b d1">Half two · admin — what the agent sees, how it acts</div>
     <h2 class="b d2" style="font-size:clamp(1.9rem,4.4vw,3.2rem)">Compose the experience.</h2>
     <div class="tpl-row b d3" data-tpls>
       <span class="tpl on"><span class="dotm"></span>Order support</span>
@@ -410,9 +426,9 @@ h2{font-family:var(--disp);font-weight:600;line-height:1.02;font-size:clamp(2.1r
         </div>
       </div>
       <div class="panel-c b d4">
-        <div class="pt">How the AI acts · trigger × interaction &nbsp;·&nbsp; <span style="color:var(--v2)">click a cell</span></div>
+        <div class="pt">Agent autonomy · per capability &nbsp;·&nbsp; <span style="color:var(--v2)">click a cell</span></div>
         <table class="matrix" data-matrix>
-          <thead><tr><th class="cap"></th><th>See only</th><th>Suggest → approve</th><th>Guided / Auto</th></tr></thead>
+          <thead><tr><th class="cap"></th><th>See only</th><th>Suggest → approve</th><th>Auto</th></tr></thead>
           <tbody>
             <tr class="mrow" data-cap="rt"><td class="cap">Real-time summary</td>
               <td><div class="cell"><span class="pip on"></span></div></td><td><div class="cell"><span class="pip"></span></div></td><td><div class="cell"><span class="pip"></span></div></td></tr>
@@ -424,7 +440,7 @@ h2{font-family:var(--disp);font-weight:600;line-height:1.02;font-size:clamp(2.1r
               <td><div class="cell"><span class="pip"></span></div></td><td><div class="cell"><span class="pip on"></span></div></td><td><div class="cell"><span class="pip"></span></div></td></tr>
           </tbody>
         </table>
-        <div class="subline" style="margin-top:12px">Reactive vs. proactive set per capability · Rules Engine fires the proactive ones.</div>
+        <div class="subline" style="margin-top:12px">When unsure, the agent asks — offering options or free text — then continues. Guardrails hold at every level.</div>
       </div>
     </div>
     <div class="subline b d5">Admin sets the defaults and the guardrails. The agent tunes their own view next.</div>
@@ -481,6 +497,48 @@ h2{font-family:var(--disp);font-weight:600;line-height:1.02;font-size:clamp(2.1r
       <div class="toast"><span>✓</span> Credit applied · reply sent to Maria</div>
     </div>
     <div class="hil b d5" style="margin-top:22px">The AI does the toggling. The human stays in control. The customer never waits. <span class="vi">That's the product — end to end.</span></div>
+  </div></section>
+
+  <!-- 5c branded rendering -->
+  <section class="room statement" data-tone="statement"><div class="inner">
+    <div class="eyebrow b d1">One agent · any brand</div>
+    <h2 class="b d2" style="font-size:clamp(1.9rem,4.4vw,3rem)">The agent emits intent. Your brand renders it.</h2>
+    <div class="brandrow">
+      <div>
+        <div class="bcard b d3">
+          <div class="bh" style="background:#1B4DD1"></div>
+          <div class="bin">
+            <div class="blogo"><span class="bdot" style="background:#1B4DD1"></span>Acme Telecom</div>
+            <div class="bk">Order #4471</div><div class="bv">Delayed · +2 days</div>
+            <div class="bbtn" style="background:#1B4DD1">Apply $15 credit</div>
+          </div>
+        </div>
+        <div class="brandtag">Their brand</div>
+      </div>
+      <div>
+        <div class="bcard b d4">
+          <div class="bh" style="background:#7A3DBE"></div>
+          <div class="bin">
+            <div class="blogo"><span class="bdot" style="background:#7A3DBE"></span>Northwind Bank</div>
+            <div class="bk">Order #4471</div><div class="bv">Delayed · +2 days</div>
+            <div class="bbtn" style="background:#7A3DBE">Apply $15 credit</div>
+          </div>
+        </div>
+        <div class="brandtag">Their brand</div>
+      </div>
+      <div>
+        <div class="bcard byou b d5">
+          <div class="bh" style="background:var(--line)"></div>
+          <div class="bin">
+            <div class="blogo"><span class="bdot" style="background:var(--panel2);border:1px solid var(--line)"></span>Your front-end</div>
+            <div class="bk">Order #4471</div><div class="bv">Delayed · +2 days</div>
+            <div class="bbtn">Rendered in your stack</div>
+          </div>
+        </div>
+        <div class="brandtag">Your components</div>
+      </div>
+    </div>
+    <div class="hil b d5" style="margin-top:26px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto">Same agent, same intent — three surfaces. We skin one component library to each brand, or hand the intent to your own front-end. <span class="vi">No forking, ever.</span></div>
   </div></section>
 
   <!-- 5b flywheel -->
